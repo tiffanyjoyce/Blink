@@ -4,7 +4,7 @@
     background-color: black;
     height: 100vh;
     display: flex;
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Orbitron', sans-serif;
 }
 .logo{
     margin: 0 auto;
@@ -23,8 +23,7 @@
     font-size: 5rem;
     color: white;
     white-space: nowrap;
-    font-family: 'Michroma', sans-serif;
-    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
 }
 .logo-title span{
     display: inline-block;

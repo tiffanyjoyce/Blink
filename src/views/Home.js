@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from '../images/blink.jpg'
+import logo2 from '../images/cropped-blink.PNG'
 import jerome from '../images/jerome.jpg'
 import './Home.css';
 
