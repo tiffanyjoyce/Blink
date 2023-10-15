@@ -7,11 +7,13 @@ function Home() {
   return (
     <div className='home-container'>
       <div className='logo-container'>
-        <h1 className='blink'>BLINK</h1>
+      <div className='logo-title'>
+               <span>BLINK OF AN EYE</span>
+            </div>
+        <div className='logo-title title2'>
+            <span> BLINK OF AN EYE</span>
+        </div>
         <img className='logo' src={logo}/>
-            <h1 className='logo-title'>
-                OF AN EYE
-            </h1>
       </div>
       <div className='jerome-container'>
         <h2 className='jerome-title'>
