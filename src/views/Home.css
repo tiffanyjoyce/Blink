@@ -1,0 +1,58 @@
+.logo-container{
+    position: relative;
+    text-align: center;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.logo{
+    margin: 0 auto;
+    height: 70vh;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    object-fit: cover;
+}
+.blink{
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 9rem;
+    color: white;
+    font-family: 'Michroma', sans-serif;
+}
+.logo-title{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 5rem;
+    color: white;
+    white-space: nowrap;
+    font-family: 'Michroma', sans-serif;
+
+}
+.jerome-container{
+    background-color: black;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.jerome-img{
+    margin: 0 auto;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.jerome-title{
+    color: white;
+}
+.jerome-headers{
+    color: white;
+}
