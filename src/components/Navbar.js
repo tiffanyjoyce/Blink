@@ -4,7 +4,7 @@ function Navbar() {
   return (
     <div>
         <div className="navbar bg-black">
-  <a className="btn btn-ghost normal-case text-xl">BOAE</a>
+  <a className="btn btn-ghost normal-case text-lg">Blink of an Eye</a>
 </div>
     </div>
   )
