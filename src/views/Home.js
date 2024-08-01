@@ -2,13 +2,61 @@ import React from 'react'
 import logo from '../images/blink.jpg'
 import jerome1 from '../images/jerome1.JPEG'
 import jerome2 from '../images/jerome2.JPEG'
+import black from "../images/0e0e0e.png"
 import './Home.css'
+import { useState } from 'react'
 import { useInView } from 'react-intersection-observer'
+import { FaAngleDown } from "react-icons/fa6";
+import Carousel from 'react-bootstrap/Carousel';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
     const { ref: meetRef, inView: meetInView } = useInView();
     const { ref: romeRef, inView: romeInView } = useInView();
     const { ref: comingRef, inView: comingInView } = useInView();
+
+    const apiKey = process.env.REACT_APP_API_TOKEN;
+    const [email, setEmail] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setErrorMessage('');
+        setSuccessMessage('');
+
+        try {
+            const response = await fetch(
+                "https://connect.mailerlite.com/api/subscribers",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        Authorization: `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        groups: ["127154008536123269"]
+                    })
+                }
+            )
+            const data = await response.json();
+            console.log(data);
+
+            if(data.errors){
+                setErrorMessage(data?.message)
+                return;
+            }
+
+            setSuccessMessage("Thank you for Subscribing!")
+            
+        } catch (error){
+            console.error(error)
+            setErrorMessage("Failed to subscribe. Please try again.")
+
+        }
+    }
     return (
         <div className='home-container'>
             <div className='logo-container'>
@@ -20,6 +68,7 @@ function Home() {
                 <div className='logo-title2'>
                     of an eye
                 </div>
+                <FaAngleDown className='down-arrow' />
                 {/* <img className='logo' src={logo} /> */}
             </div>
             <div className='about-container'>
@@ -66,7 +115,7 @@ function Home() {
             <div className='outside-container'>
                 <div className='next-container'>
                     <p ref={romeRef} className={`${'rome'} ${romeInView ? 'animateName' : ''}`}>Jerome K. Miller</p>
-                    <p className='titles'>Actor. Director. Writer. Producer. Story-teller.</p>
+                    <p className='titles'><span></span></p>
                     <p className='bio'>When I'm not acting in productions like "Cry", "Brothers’ Can you Hear me", or "1765 Cascade", you can catch me engaging in the creative aspects of storytelling. I delve into directing, producing, writing, narrating, and acting, as I did in documentaries like "Leaving it All Behind" and short films like "Therapy". Essentially, I'm an artist driven to master the art of interweaving these creative threads.</p>
 
                 </div>
@@ -112,7 +161,41 @@ function Home() {
                     </div>
                 </div> */}
                 <h1 className='features'>Features</h1>
-                <div className='carousel-box'>
+                <Carousel fade>
+                    <Carousel.Item>
+                        <img src={black} />
+                        <Carousel.Caption>
+                            <h3>"Cry", 2020</h3>
+                            <p>A short film that captures the essence of cherishing life's vital elements - be it relationships, pivotal moments, or personal achievements. It serves as a poignant reminder to embrace these treasures, as neglecting them could lead to losing oneself and the valuable people in one's life. Ultimately, the film emphasizes the significance of not taking life's essentials for granted, highlighting the ease with which everything crucial can slip away in the blink of an eye</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black} />
+                        <Carousel.Caption>
+                            <h3>"Brothers, Can You Hear Me?", 2019</h3>
+                            <p>A short film portraying the harrowing reality of the school-to-prison pipeline, this film sheds light on how African-American males become primary targets within the systemic structure of the United States. It delves into the repercussions faced by these individuals; without access to proper education and opportunities to make positive choices, they risk being ensnared within America's prison system, unfairly labeled as criminals.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black} />
+                        <Carousel.Caption>
+                            <h3>"Leaving it All Behind", 2020</h3>
+                            <p>
+                            A documentary chronicling the life of Jerome K. Miller, highlighting the adversities he overcame while growing up in Savannah, GA without a father. Despite the stacked odds against him, the film showcases his journey to break free from his neighborhood and hometown, shedding light on the traumas he faced and conquered.
+                            </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black}/>
+                        <Carousel.Caption>
+                            <h3>Heart of Hollywood Magazine</h3>
+                            <p>
+                            A documentary chronicling the life of Jerome K. Miller, highlighting the adversities he overcame while growing up in Savannah, GA without a father. Despite the stacked odds against him, the film showcases his journey to break free from his neighborhood and hometown, shedding light on the traumas he faced and conquered.
+                            </p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+                {/* <div className='carousel-box'>
                     <div className="thecarousel carousel">
                         <div id="slide1" className="item1 carousel-item relative w-full">
                             <h2 className='c-title'>"Cry", 2020</h2>
@@ -180,17 +263,19 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
             <div className='comingsoon-container'>
                 <div className='top'>
                     <p ref={comingRef} className={`${'comingsoon'} ${comingInView ? 'comingsoonAnimate' : ''}`}> Content Coming Soon</p>
                 </div>
-                <div className='bottom'>
+                <form className='bottom' onSubmit={handleSubmit}>
                     <p>Want to stay updated? Subcribe to our newsletter.</p>
-                    <input type="text" placeholder="Email" className="sub-input input input-bordered w-full max-w-xs" />
-                    <button className='subscribe-button btn'>Subscribe</button>
-                </div>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" className="sub-input input input-bordered w-full max-w-xs" />
+                    <button type="submit" className='subscribe-button btn'>Subscribe</button>
+                    {errorMessage && <p className='error'>{errorMessage}</p>}
+                    {successMessage && <p className='success'>{successMessage}</p>}
+                </form>
             </div>
             {/* <div className='features-container'>
                 <div className='left-container'>

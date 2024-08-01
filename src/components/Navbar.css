@@ -3,3 +3,27 @@
     color: #d0d0d0;
     font-family: 'Syne', sans-serif;
 }
+.nav-dropdown{
+    display: none;
+}
+@media screen and (max-width: 500px){
+    .home-text{
+        font-size: large!important;
+    }
+}
+@media screen and (max-width: 400px){
+    .home-text{
+        font-size: medium!important;
+    }
+    .content-text{
+        font-size: 10pt!important;
+    }
+    .subscribe-text{
+        font-size: 10pt!important;
+    }
+}
+@media screen and (max-width: 363px){
+    .home-text{
+        font-size: small!important;
+    }
+}

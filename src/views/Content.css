@@ -1,0 +1,30 @@
+.comingsoon-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+}
+.comingsoon{
+    font-family: 'Syne', sans-serif;
+    font-size: 76pt;
+    white-space: nowrap;
+    padding-top: 100px;
+}
+.comingsoonAnimate{
+    animation: fadeComing 5s;
+}
+@keyframes fadeComing{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+@media screen and (max-width: 1024px){
+    .comingsoon{
+        font-size: 70pt;
+    }
+}
+@media screen and (max-width: 768px){
+    .comingsoon{
+        font-size: 60pt;
+    }
+}

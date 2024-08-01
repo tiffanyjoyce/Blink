@@ -10,7 +10,6 @@
     text-align: center;
     background-color: #0e0e0e;
     height: 100vh;
-    display: flex;
     font-family: 'Syne', sans-serif;
     display: grid; 
     grid-template-columns: 1fr; 
@@ -20,6 +19,7 @@
       "."
       "."
       ".";
+      justify-content: center;
 }
 .logo{
     margin: 0 auto;
@@ -30,6 +30,16 @@
     position: absolute;
     object-fit: cover;
     z-index: 0;
+}
+@media screen and (max-width: 1024px) {
+    .logo{
+        height: 65vh;
+    }
+}
+@media screen and (max-width: 425px) {
+    .logo{
+        height: 50vh;
+    }
 }
 .logo-title{
     font-family: 'Syne', sans-serif;
@@ -64,6 +74,47 @@
     animation: fadeIn 5s;
     z-index: 1;
 }
+@media screen and (max-width: 1024px) {
+    .logo-title{
+        font-size: 160pt;
+    }
+    .logo-title2{
+        font-size: 150pt;
+    }
+}
+@media screen and (max-width: 768px) {
+    .logo-title{
+        font-size: 100pt;
+    }
+    .logo-title2{
+        font-size: 100pt;
+    }
+}
+@media screen and (max-width: 425px) {
+    .logo-title{
+        font-size: 70pt;
+        margin-top: 100px;
+    }
+    .logo-title2{
+        font-size: 60pt;
+        margin-top: 30px;
+    }
+    .logo-title1{
+        color: transparent;
+        background-color: transparent;
+    }
+}
+.down-arrow{
+    color: #d0d0d0!important;
+    margin: 0 auto;
+    font-size: 30px;
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce{
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40%{transform: translateY(-30px);}
+    60%{transform: translateY(-15px);}
+}
 .about-container{
     height: 100vh;
     background-color: #0e0e0e;
@@ -80,6 +131,21 @@
         ". . ."
         ". . ."
         ". . .";
+}
+@media screen and (max-width: 700px){
+    .about-container{
+        display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+              "."
+              "."
+              ".";
+        
+          
+    }
 }
 .inspiration{
     margin: 30px;
@@ -108,6 +174,86 @@
 .vision-p{
     font-size: 12pt;
 }
+@media screen and (max-width: 768px){
+    .inspiration-t{
+        font-size: 20pt;
+    }
+    .inspiration-p{
+        font-size: 10pt;
+    }
+    .story-t{
+        font-size: 20pt;
+    }
+    .story-p{
+        font-size: 10pt;
+    }
+    .vision-t{
+        font-size: 20pt;
+    }
+    .vision-p{
+        font-size: 10pt;
+    }
+}
+@media screen and (max-width: 590px){
+    .inspiration-t{
+        font-size: 18pt;
+    }
+    .inspiration-p{
+        font-size: 9pt;
+    }
+    .story-t{
+        font-size: 18pt;
+    }
+    .story-p{
+        font-size: 9pt;
+    }
+    .vision-t{
+        font-size: 18pt;
+    }
+    .vision-p{
+        font-size: 9pt;
+    }
+}
+@media screen and (max-width: 425px){
+    .inspiration-t{
+        font-size: 16pt;
+    }
+    .inspiration-p{
+        font-size: 8pt;
+    }
+    .story-t{
+        font-size: 16pt;
+    }
+    .story-p{
+        font-size: 8pt;
+    }
+    .vision-t{
+        font-size: 16pt;
+    }
+    .vision-p{
+        font-size: 8pt;
+    }
+}
+@media screen and (max-width: 320px){
+    .inspiration-t{
+        font-size: 14pt;
+    }
+    .inspiration-p{
+        font-size: 7pt;
+    }
+    .story-t{
+        font-size: 14pt;
+    }
+    .story-p{
+        font-size: 7pt;
+    }
+    .vision-t{
+        font-size: 14pt;
+    }
+    .vision-p{
+        font-size: 7pt;
+    }
+}
 /* .about{
     font-size: 24pt;
     margin: 2rem;
@@ -130,6 +276,15 @@
     width: 100vw;
     height: 100vh; 
     overflow: hidden;
+    background-color: #0e0e0e;
+}
+@media screen and (max-width: 425px){
+    .image-container{
+        display: flex;
+    }
+    .jerome-image1{
+        object-fit: contain;
+    }
 }
 .meet{
     position: absolute;
@@ -139,8 +294,23 @@
     font-family: 'Syne', sans-serif;
     font-size: 47pt;
     white-space: nowrap;
-    color: #d0d0d0;
+    color: #0e0e0e;
     font-weight: 700;
+}
+@media screen and (max-width: 500px){
+    .meet{
+        font-size: 30pt;
+    }
+}
+@media screen and (max-width: 375px){
+    .meet{
+        font-size: 25pt;
+    }
+}
+@media screen and (max-width: 320px){
+    .meet{
+        font-size: 20pt;
+    }
 }
 .outside-container{
     background-color: #0e0e0e;
@@ -159,6 +329,7 @@
     background-color: #0e0e0e;
     color: #d0d0d0;
     position: relative;
+    justify-content: center;
 }
 .rome{
     font-family: 'Syne', sans-serif;
@@ -169,12 +340,75 @@
     justify-content: center;
     margin-top: 100px;
 }
+@media screen and (max-width: 768px){
+    .rome{
+        font-size: 58pt;
+    }
+}
+@media screen and (max-width: 425px){
+    .rome{
+        font-size: 34pt;
+    }
+}
+@media screen and (max-width: 375px){
+    .rome{
+        font-size: 30pt;
+    }
+}
+@media screen and (max-width: 320px){
+    .rome{
+        white-space: wrap;
+        text-align: center;
+        margin-top: 0;
+        padding-bottom: 20px;
+    }
+}
 .titles{
     font-family: 'Syne', sans-serif;
     font-size: 24pt;
     display: flex;
     justify-content: center;
 }
+.titles span{
+    position: relative;
+}
+.titles span::before{
+    content:"Actor";
+    color: #d0d0d0;
+    animation: words 20s infinite;
+}
+.titles::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    border-left: 2px solid #d0d0d0;
+    right: -8px;
+    animation: cursor .8s infinite;
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid;
+    }
+}
+@keyframes words {
+    0%,20%{
+        content: "Director";
+    }
+    21%,41%{
+        content: "Producer";
+    }
+    41%,60%{
+        content: "Writer";
+    }
+    61%,80%{
+        content: "Story-teller";
+    }
+    81%,100%{
+        content: "Artist";
+    }
+}
+
 .bio{
     font-family: 'Syne', sans-serif;
     font-size: 14pt;
@@ -185,6 +419,30 @@
     margin-right: 200px;
     text-align: center;
 }
+@media screen and (max-width: 768px){
+    .bio{
+        margin-left:100px;
+        margin-right:100px;
+    }
+}
+@media screen and (max-width: 425px){
+    .bio{
+        margin: 0 auto;
+        font-size: 13pt;
+    }
+}
+@media screen and (max-width:375px){
+    .bio{
+        margin: 20px;
+        font-size: 12pt;
+    }
+}
+@media screen and (max-width:375px){
+    .bio{
+        margin: 10px;
+        font-size: 12pt;
+    }
+}
 .accordian-container{
     width: 50vw;
     background-color: #121212;
@@ -194,12 +452,26 @@
 .features-container{ 
   background-color: #0e0e0e;
   color: #d0d0d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Syne', sans-serif;
 }
 .features{
-    display: flex;
-    justify-content: center;
     font-size: 47pt;
     font-family: 'Syne', sans-serif;
+}
+@media screen and (max-width: 425px){
+    .features{
+        font-size: 40pt;
+    }
+}
+@media screen and (max-width:375px){
+    .features{
+        padding-bottom: 25px;
+        font-size: 35pt;
+    }
 }
 .comingsoon-container{
     height: 100vh;
@@ -214,15 +486,13 @@
     grid-template-areas: 
       "."
       "."; 
+      justify-content: center;
 }
 .comingsoon{
     font-family: 'Syne', sans-serif;
     font-size: 76pt;
     white-space: nowrap;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding-top: 100px;
 }
 .bottom{
@@ -232,6 +502,30 @@
     flex-direction: column;
     gap: 20px;
     font-family: 'Syne', sans-serif;
+    padding-bottom: 100px;
+}
+@media screen and (max-width: 768px){
+    .comingsoon{
+        font-size: 50pt!important;
+    }
+}
+@media screen and (max-width: 470px){
+    .comingsoon{
+        font-size: 30pt!important;
+    }
+}
+@media screen and (max-width: 400px){
+    .comingsoon{
+        font-size: 27pt!important;
+    }
+}
+@media screen and (max-width: 320px){
+    .bottom p{
+        font-size: 10pt;
+    }
+    .comingsoon{
+        font-size: 22pt!important;
+    }
 }
 .content{
     font-family: 'Syne', sans-serif;
