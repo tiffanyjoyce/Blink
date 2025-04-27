@@ -3,6 +3,9 @@
     color: #d0d0d0;
     font-family: 'Syne', sans-serif;
 }
+.made{
+    font-family: "Syne", sans-serif;
+}
 .nav-dropdown{
     display: none;
 }

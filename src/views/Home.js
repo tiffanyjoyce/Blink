@@ -64,7 +64,7 @@ function Home() {
                 <div className='logo-title'>
                     blink
                 </div>
-                <div className='logo-title1'>A creative art company that specializes in filmmaking (directing, writing, screenwriting & producing), content creation & creative story-telling.</div>
+                <div className='logo-title1'>A creative art company that specializes in filmmaking (directing, writing, screenwriting & producing), artistic direction & creative story-telling.</div>
                 <div className='logo-title2'>
                     of an eye
                 </div>
@@ -115,7 +115,15 @@ function Home() {
             <div className='outside-container'>
                 <div className='next-container'>
                     <p ref={romeRef} className={`${'rome'} ${romeInView ? 'animateName' : ''}`}>Jerome K. Miller</p>
-                    <p className='titles'><span></span></p>
+                    <div className='text-changer'>
+                        <p className='titles'>
+                            <span className='role'>Actor.</span>
+                            <span className='role'>Producer.</span>
+                            <span className='role'>Director.</span>
+                            <span className='role'>Writer.</span>
+                            <span className='role'>Creator.</span>
+                            </p>
+                            </div>
                     <p className='bio'>When I'm not acting in productions like "Cry", "Brothers’ Can you Hear me", or "1765 Cascade", you can catch me engaging in the creative aspects of storytelling. I delve into directing, producing, writing, narrating, and acting, as I did in documentaries like "Leaving it All Behind" and short films like "Therapy". Essentially, I'm an artist driven to master the art of interweaving these creative threads.</p>
 
                 </div>
@@ -161,37 +169,56 @@ function Home() {
                     </div>
                 </div> */}
                 <h1 className='features'>Features</h1>
-                <Carousel fade>
+                <Carousel className='hmm' fade>
                     <Carousel.Item>
                         <img src={black} />
-                        <Carousel.Caption>
+                        <Carousel.Caption className='idk'>
                             <h3>"Cry", 2020</h3>
                             <p>A short film that captures the essence of cherishing life's vital elements - be it relationships, pivotal moments, or personal achievements. It serves as a poignant reminder to embrace these treasures, as neglecting them could lead to losing oneself and the valuable people in one's life. Ultimately, the film emphasizes the significance of not taking life's essentials for granted, highlighting the ease with which everything crucial can slip away in the blink of an eye</p>
+                            <a href='https://www.youtube.com/watch?v=Bb8-zSyKhBc'><button className='watch btn'>Watch</button></a>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img src={black} />
-                        <Carousel.Caption>
+                        <Carousel.Caption className='idk'>
                             <h3>"Brothers, Can You Hear Me?", 2019</h3>
                             <p>A short film portraying the harrowing reality of the school-to-prison pipeline, this film sheds light on how African-American males become primary targets within the systemic structure of the United States. It delves into the repercussions faced by these individuals; without access to proper education and opportunities to make positive choices, they risk being ensnared within America's prison system, unfairly labeled as criminals.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={black} />
-                        <Carousel.Caption>
-                            <h3>"Leaving it All Behind", 2020</h3>
-                            <p>
-                            A documentary chronicling the life of Jerome K. Miller, highlighting the adversities he overcame while growing up in Savannah, GA without a father. Despite the stacked odds against him, the film showcases his journey to break free from his neighborhood and hometown, shedding light on the traumas he faced and conquered.
-                            </p>
+                            <a href='https://www.youtube.com/watch?v=TlZWgfEblvw'><button className='watch btn'>Watch</button></a>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img src={black}/>
-                        <Carousel.Caption>
+                        <Carousel.Caption className='idk'>
                             <h3>Heart of Hollywood Magazine</h3>
-                            <p>
-                            A documentary chronicling the life of Jerome K. Miller, highlighting the adversities he overcame while growing up in Savannah, GA without a father. Despite the stacked odds against him, the film showcases his journey to break free from his neighborhood and hometown, shedding light on the traumas he faced and conquered.
-                            </p>
+                            <p>Jerome has earned himself two features in Heart of Hollywood Magazine:</p>
+                            <p>"Inspiration Spotlight: Business Expert and Artist, Jerome K. Miller", 2023</p>
+                            <a href='https://www.heartofhollywoodmagazine.com/post/inspiration-spotlight-business-expert-and-artist-jerome-k-miller'><button className='watch btn'>Read</button></a>
+                            <p>"13 Great Ways to Prepare before Your Next Audition", 2023</p>
+                            <a href='https://www.heartofhollywoodmagazine.com/post/13-great-ways-to-prepare-before-your-next-audition'><button className='watch btn'>Read</button></a>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black}/>
+                        <Carousel.Caption className='idk'>
+                            <h3>Sheen Magazine</h3>
+                            <p>"Introducing Producer, Actor, and Director Jeorme K. Miller", 2023</p>
+                            <a href='https://www.sheenmagazine.com/introducing-producer-actor-and-director-jerome-k-miller/'><button className='watch btn'>Read</button></a>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black}/>
+                        <Carousel.Caption className='idk'>
+                            <h3>The Eggcellent Life Podcast</h3>
+                            <p>"True Happiness Comes With A Side Of Growing Pains", 2021</p>
+                            <a href="https://podcasts.apple.com/us/podcast/the-eggcellent-life/id1506654969?i=1000516360151"><button className='watch btn'>Listen</button></a>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img src={black}/>
+                        <Carousel.Caption className='idk'>
+                            <h3>The Liberators Podcast</h3>
+                            <p>"Episode 53: Mindset Needed to Excecl in Negative</p>
+                            <a href='https://podcasts.apple.com/us/podcast/the-liberators-podcast/id1456011341?i=1000547145730'><button className='watch btn'>Listen</button></a>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

@@ -8,6 +8,9 @@ function Navbar() {
   <div className="flex-1">
     <a className="home-text btn btn-ghost text-xl" href='/'>Blink of an Eye</a>
   </div>
+  <div className='flex-1'>
+    <p className='made'>MADE IN NYC</p>
+  </div>
   <div className="flex-none">
     <ul className="nav-list menu menu-horizontal px-1">
     {/* <li><a className='about-text'href="/about">About</a></li> */}

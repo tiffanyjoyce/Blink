@@ -10,7 +10,7 @@ export class Footer extends Component {
     <p>Copyright © {new Date().getFullYear()} - All rights reserved</p>
   </aside>
   <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-    <a>
+    <a href='https://x.com/blinkofaneyeww'>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

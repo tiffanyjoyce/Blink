@@ -363,28 +363,51 @@
         padding-bottom: 20px;
     }
 }
-.titles{
-    font-family: 'Syne', sans-serif;
-    font-size: 24pt;
+.text-changer{
+    height: 40px;
+    padding: 10px;
+    border-radius: 8px;
     display: flex;
+    font-family: 'Syne', sans-serif;
+    font-size:24pt;
+    box-sizing: content-box;
     justify-content: center;
 }
-.titles span{
+.titles{
+    overflow: hidden;
     position: relative;
+    justify-content: center;
 }
-.titles span::before{
-    content:"Actor";
-    color: #d0d0d0;
-    animation: words 20s infinite;
-}
-.titles::after{
-    content: "";
-    position: absolute;
-    width: 0;
+.role{
+    display: block;
     height: 100%;
-    border-left: 2px solid #d0d0d0;
-    right: -8px;
-    animation: cursor .8s infinite;
+    animation: role-change 8s infinite;
+}
+@keyframes role-change{
+    10%{
+        transform: translateY(-102%);
+    }
+    25%{
+        transform: translateY(-100%);
+    }
+    35% {
+        transform: translateY(-202%);
+    }
+    50% {
+        transform: translateY(-200%);
+    }
+    60%{
+        transform: translateY(-302%);
+    }
+    75%{
+        transform: translateY(-300%);
+    }
+    85%{
+        transform: translateY(-402%);
+    }
+    100%{
+        transform: translateY(-400%);
+    }
 }
 @keyframes cursor {
     to{
@@ -472,6 +495,12 @@
         padding-bottom: 25px;
         font-size: 35pt;
     }
+}
+.hmm{
+    height: 100vh;
+}
+.idk{
+   margin-bottom: 400px;
 }
 .comingsoon-container{
     height: 100vh;
